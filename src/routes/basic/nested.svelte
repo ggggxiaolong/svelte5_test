@@ -1,0 +1,1 @@
+<p class="text-amber-500 font-mono text-2xl">This is a nested paragraph.</p>
