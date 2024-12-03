@@ -37,6 +37,7 @@
 	]);
 
   let input = $state('World')
+  let yes = $state(false)
 </script>
 
 <div class="m-1">
@@ -94,6 +95,19 @@
 
   <input bind:value={input} type="text" class="input input-bordered input-primary"/>
   <h1>Hello {input}!</h1>
+
+  <label>
+    <input type="checkbox" bind:checked={yes} />
+    Yes! send me regular email spam
+  </label>
+  {#if yes}
+    <p>Thanks you. We will bombard your inbox and sell your personal details.</p>
+  {:else}
+   <p>You must opt in to continue, If you're not paying, you're the product.</p>
+   {/if}
+   <button class="btn btn-primary mt-1 mb-1" disabled={!yes}>
+    Submit
+  </button>
 </div>
 
 <style>
